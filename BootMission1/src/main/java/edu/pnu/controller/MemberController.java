@@ -70,6 +70,7 @@ public class MemberController {
 	@PutMapping("/member/{id}")
 	public MemberDTO putMember(@PathVariable Integer id, MemberDTO memberDTO){
 		memberDTO.setId(id);
+		memberDTO.setRegidate(new Date());
 		for(int i = 0 ; i < list.size(); i++) {
 			if (list.get(i).getId() == id) {
 				list.set(i, memberDTO);
@@ -85,12 +86,13 @@ public class MemberController {
 		memberDTO.setId(id);
 		for (MemberDTO dto : list) {
 			if (dto.getId() == id) {
-				dto.setName(memberDTO.getName() != null ? memberDTO.getName() : dto.getName());
-				dto.setPass(memberDTO.getPass() != null ? memberDTO.getPass() : dto.getPass());
-				dto.setRegidate(memberDTO.getRegidate() != null ? memberDTO.getRegidate() : dto.getRegidate());
+				if (memberDTO.getName() != null) dto.setName(memberDTO.getName());
+	            if (memberDTO.getPass() != null) dto.setPass(memberDTO.getPass());
+				
+				return dto;
 			}
 		}
-		return memberDTO;
+		return null;
 	}
 	
 	// 삭제(Delete - delete)
