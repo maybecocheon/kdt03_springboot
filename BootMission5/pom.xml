@@ -8,10 +8,10 @@
 		<version>3.5.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.rubypaper</groupId>
-	<artifactId>Chapter02</artifactId>
+	<groupId>edu.pnu</groupId>
+	<artifactId>BootMission5</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Chapter02</name>
+	<name>BootMission5</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -52,9 +52,13 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.rubypaper</groupId>
-			<artifactId>board-spring-boot-starter</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 
