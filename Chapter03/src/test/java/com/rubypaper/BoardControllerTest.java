@@ -1,4 +1,4 @@
-package com.rubypaper.BoardControllerTest;
+package com.rubypaper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
