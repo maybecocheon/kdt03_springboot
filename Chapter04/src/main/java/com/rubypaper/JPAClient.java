@@ -7,6 +7,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import com.rubypaper.domain.Board;
 
@@ -84,10 +86,86 @@ public class JPAClient {
 			em.close();
 		}
 	}
+	
+	public static void updateTitle() {
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		try {
+			tx.begin();
+			
+			Board board = em.find(Board.class, 1L);
+			board.setTitle("검색한 게시글의 제목 수정");
+			
+			tx.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			tx.rollback();
+		} finally {
+			em.close();
+		}
+	}
+	
+	public static void delete() {
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		try {
+			tx.begin();
+			
+			Board board = em.find(Board.class, 1L);
+			em.remove(board);
+			
+			tx.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			tx.rollback();
+		} finally {
+			em.close();
+		}
+	}
+	
+	public static void selectJpql() {
+		EntityManager em = emf.createEntityManager();
+		try {
+			String jpql = "SELECT b FROM Board b ORDER BY b.seq desc";
+			TypedQuery<Board> query = em.createQuery(jpql, Board.class);
+			List<Board> boardList = query.getResultList();
+			for (Board board : boardList) {
+				System.out.println("---> " + board.toString());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			em.close();
+		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static void selectJpql2() {
+		EntityManager em = emf.createEntityManager();
+		try {
+			String jpql = "SELECT b.seq, b.title FROM Board b ORDER BY b.seq desc";
+			Query query = em.createQuery(jpql);
+			List<Object[]> resList = query.getResultList();
+			for (Object[] b : resList) {
+				System.out.print(b[0]);
+				if (1 < b.length) {
+					for (int i = 1; i < b.length; i++) {
+						System.out.print(", " + b[i]);
+					}
+				}
+				System.out.println();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			em.close();
+		}
+	}
 
 	public static void main(String[] args) {
 		
 		insert();
+		selectJpql2();
 		
 		if (emf != null) {
 			emf.close();
