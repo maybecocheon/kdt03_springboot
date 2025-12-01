@@ -68,8 +68,8 @@ public class TestController {
 			oldBoard.setTitle(board.getTitle());
 		if (board.getContent() != null)
 			oldBoard.setContent(board.getContent());
-		if (board.getWriter() != null)
-			oldBoard.setWriter(board.getWriter());
+//		if (board.getWriter() != null)
+//			oldBoard.setWriter(board.getWriter());
 		
 		boardRepo.save(oldBoard);
 

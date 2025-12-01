@@ -30,7 +30,6 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
 	List<Board> findByTitleContainingOrderBySeqDesc(String searchKeyword, Pageable paging);
 	Page<Board> findByTitleContaining(String searchKeyword, Pageable paging);
 
-	/*
 	// Query 어노테이션
 	// jpql
 	@Query("SELECT b FROM Board b WHERE b.title LIKE %?1% ORDER BY b.seq DESC")
@@ -53,5 +52,4 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
 	@Query(value="SELECT * FROM board WHERE title LIKE '%'||:searchKeyword||'%' ORDER BY seq DESC",
 			nativeQuery=true)
 	List<Object[]> queryAnnotationTest5(String searchKeyword);
-	*/
 }

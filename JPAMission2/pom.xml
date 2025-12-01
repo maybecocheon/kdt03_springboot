@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.rubypaper</groupId>
-	<artifactId>Chapter05</artifactId>
+	<artifactId>JPAMission2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Chapter05</name>
+	<name>JPAMission2</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -40,6 +40,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
@@ -51,20 +57,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<!-- querydsl-jpa : runtime-library -->
-		<dependency>
-    		<groupId>io.github.openfeign.querydsl</groupId>
-    		<artifactId>querydsl-jpa</artifactId>
-    		<version>7.1</version>
 		</dependency>
 	</dependencies>
 
@@ -78,13 +72,6 @@
 						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
-						</path>
-						<!-- querydsl-apt : generate Q-Class -->
-						<path>
-    						<groupId>io.github.openfeign.querydsl</groupId>
-    						<artifactId>querydsl-apt</artifactId>
-    						<version>7.1</version>
-    						<classifier>jpa</classifier>
 						</path>
 					</annotationProcessorPaths>
 				</configuration>
