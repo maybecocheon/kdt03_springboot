@@ -13,6 +13,6 @@ public class ServiceTest {
 	
 	@Test
 	public void findAll() {
-		memberService.findAll();
+		memberService.findAllMember();
 	}
 }
