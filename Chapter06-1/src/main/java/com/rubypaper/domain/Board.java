@@ -33,9 +33,9 @@ public class Board {
 	private String content;
 	@Builder.Default
 	@Temporal(TemporalType.DATE)
-	@Column(updatable = false)
+	@Column(insertable = true, updatable = false, columnDefinition= "date default (curdate())")
 	private Date createDate = new Date();
 	@Builder.Default
-	@Column(updatable = true)
+	@Column(insertable = true, updatable = true, columnDefinition= "bigint default 0")
 	private Long cnt = 0L;
 }

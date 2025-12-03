@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>SQLException</title>
+</head>
+<body>
+	<h1><font color="red">SQLException 발생!</font></h1>
+	<a th:href="@{/}">메인 화면으로</a>
+	<table>
+		<tr>
+			<th bgcolor="red" align="left">예외 메시지: [[${ exceptionMessage }]]</th>
+		</tr>
+		<tr th:each="trace : ${ stackTrace}">
+			<td th:text="${ trace }"></td>
+		</tr>
+	</table>
+</body>
+</html>

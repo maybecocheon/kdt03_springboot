@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>게시글 상세</title>
+</head>
+<body th:align="center">
+	<table th:align="center" border="1" th:cellpadding="0"
+			th:cellspacing="0" th:width="500">
+		<tr>
+			<td bgcolor="orange" th:text="제목" width="80"></td>
+			<td th:text="${ board.title }"></td>
+		</tr>
+		<tr>
+			<td bgcolor="orange" th:text="작성자"></td>
+			<td th:text="${ board.writer }"></td>
+		</tr>
+		<tr>
+			<td bgcolor="orange" th:text="내용"></td>
+			<td th:text="${ board.content }" height="100"></td>
+		</tr>
+		<tr>
+			<td bgcolor="orange" th:text="등록일"></td>
+			<td th:text="${ board.createDate }"></td>
+		</tr>
+		<tr>
+			<td bgcolor="orange" th:text="조회수"></td>
+			<td th:text="${ board.cnt }"></td>
+		</tr>
+	</table>
+	<br/>
+	<a th:href="@{/updateBoard(seq=${board.seq})}">글 수정</a>&nbsp;&nbsp;&nbsp;
+	<a th:if="${ session['member'].role == 'ROLE_ADMIN' }" th:href="@{/deleteBoard(seq=${board.seq})}">글 삭제</a>&nbsp;&nbsp;&nbsp;
+	<a th:href="@{/getBoardList}">글 목록</a>
+</body>
+</html>
