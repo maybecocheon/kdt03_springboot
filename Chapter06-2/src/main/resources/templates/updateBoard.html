@@ -5,7 +5,7 @@
 <title>글 수정</title>
 </head>
 <body th:align="center">
- 	<form th:action="@{/updateBoard}" method="post">
+ 	<form th:action="@{updateBoard}" method="post">
  	<input name="seq" type="hidden" th:value="${ board.seq }"/>
 	<table th:align="center" border="1" th:cellpadding="0"
 			th:cellspacing="0">
