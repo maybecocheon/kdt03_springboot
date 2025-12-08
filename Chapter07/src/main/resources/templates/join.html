@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+</head>
+<body th:align="center">
+	<h2>회원가입</h2>
+	<p th:if="${ msg != null }"><span th:text="${ msg }"></span></p>
+	<form th:action="@{/join}" method="post">
+		<table th:align="center" border="1" th:cellpadding="0" th:cellspacing="0">
+			<tr>
+				<td bgcolor="orange">username</td>
+				<td><input type="text" name="id" placeholder="아이디 입력"/></td>
+			</tr>
+			<tr>
+				<td bgcolor="orange">password</td>
+				<td><input type="password" name="password" placeholder="비밀번호 입력"/></td>
+			</tr>
+			<tr>
+				<td bgcolor="orange">name</td>
+				<td><input type="text" name="name" placeholder="이름 입력"/></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="submit" value="가입 신청"/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
