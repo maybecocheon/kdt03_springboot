@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
 @Setter
+@Getter
 @ToString
 @Builder
 @NoArgsConstructor
@@ -22,7 +22,7 @@ public class Member {
 	@Id
 	private String username;
 	private String password;
-	@Enumerated(EnumType.STRING)	// enum의 값을 순서가 있는 인덱스가 아닌 문자열로 저장
+	@Enumerated(EnumType.STRING)
 	private Role role;
 	private Boolean enabled;
 }
