@@ -68,6 +68,7 @@ application-*.yml
 application-*.yaml
 application-*.properties
 !application.properties   # 기본 설정은 포함 (환경별 분기만 무시)
+src/main/resources/application-oauth2.properties
 *.env
 
 # === Misc ===
