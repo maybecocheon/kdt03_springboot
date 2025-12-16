@@ -4,7 +4,7 @@ export default function DisplayData() {
     const [data, setData] = useState([])
     const [searchText, setSearchText] = useState('')
     const [selectedOption, setSelectedOption] = useState('id')
-    const options = ['id', 'writer']
+    const options = ['id', 'alias']
 
     const handleTextChange = (e) => {
         setSearchText(e.target.value)
@@ -29,7 +29,7 @@ export default function DisplayData() {
                 </thead>
                 <tbody>
                     {
-                        data.map(board => (
+                        data.map(board => 
                             <tr key={board.id}>
                                 <td>{board.id}</td>
                                 <td>{board.title}</td>
@@ -37,7 +37,7 @@ export default function DisplayData() {
                                 <td>{board.content}</td>
                                 <td>{board.createDate}</td>
                             </tr>
-                        ))
+                        )
                     }
                 </tbody>
             </table>
@@ -61,6 +61,7 @@ export default function DisplayData() {
             console.error("Error fetching Data: ", error)
         }
     }
+
     return (
         <div>
             <h1>게시판 목록</h1>
@@ -68,11 +69,11 @@ export default function DisplayData() {
                 <label>
                     <select id="searchType" value={selectedOption} onChange={selectChange}>
                         {
-                            options.map((option, index) => {
+                            options.map((option, index) => 
                                 <option key={index} value={option}>
                                     {option}
                                 </option>
-                            })
+                            )
                         }
                     </select>
                     <input type="text" value={searchText} onChange={handleTextChange}/>

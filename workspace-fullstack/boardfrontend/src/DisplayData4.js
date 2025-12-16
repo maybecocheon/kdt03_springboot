@@ -16,7 +16,7 @@ export default function DisplayData4() {
                 }
             })
                 .then(resp => {
-                    if (showItem === "member"){
+                    if (showItem === "member") {
                         setDataMember(resp.data.jsondata)
                     } else {
                         setDataBoard(resp.data.jsondata)
