@@ -10,18 +10,24 @@
 		<table th:align="center" border="1" th:cellpadding="0" th:cellspacing="0">
 			<tr th:align="left">
 				<td bgcolor="orange">아이디</td>
-				<td><input type="text" name="username"/></td>
+				<td><input type="text" name="username" id="username"/></td>
 			</tr>
 			<tr th:align="left">
 				<td bgcolor="orange">비밀번호</td>
-				<td><input type="password" name="password"/></td>
+				<td><input type="password" name="password" id="password"/></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
-					<input type="submit" value="로그인"/>
+					<input type="submit" value="로그인">
 				</td>
 			</tr>
 		</table>
 	</form>
+	<div>
+		<hr/><span>또는</span>
+	</div>
+	<a href="/oauth2/authorization/google" class="google-login">구글 로그인</a><br/>
+	<a href="/oauth2/authorization/naver" class="naver-login">네이버 로그인</a><br/>
+	<a href="/oauth2/authorization/github" class="github-login">GitHub 로그인</a>
 </body>
 </html>

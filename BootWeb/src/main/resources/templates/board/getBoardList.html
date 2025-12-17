@@ -7,11 +7,8 @@
 </head>
 <body th:align="center">
 	<h1>게시글 목록</h1>
-	<span sec:authorize="isAuthenticated()">
-		<b><font color="red"><span sec:authentication="principal.member.name"></span></font></b> 님, 환영합니다.<br/>
 		<a th:href="@{/system/logout}">로그아웃</a>&nbsp;&nbsp;&nbsp;
 		<a th:href="@{/admin/adminPage}">게시판 관리</a>
-	</span>
 	<hr/>
 	<table th:align="center" border="1" th:cellpadding="0" th:cellspacing="0" th:width="700">
 		<tr>

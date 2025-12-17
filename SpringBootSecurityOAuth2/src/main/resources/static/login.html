@@ -22,14 +22,14 @@
 					if (jwtToken) {
 						sessionStorage.setItem("jwtToken", jwtToken);
 						alert("로그인 성공!");
-						window.location.href = "./welcome.html";
+						window.location.href = "../templates/board/getBoardList.html";
 						return;
 					} else alert("로그인 실패! (토큰 생성 실패)");
 				} else alert("로그인 실패!");
 			} catch (error) {
 				alert("로그인 오류!");
 			}
-			window.location.href = "./login.html";
+			window.location.href = "../templates/system/login.html";
 		}
 	</script>
 </head>
